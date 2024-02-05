@@ -20,26 +20,25 @@
                             <th>Description</th>
                             <th>Created_at</th>
                             <th>Updated_at</th>
-                        <tr>Action</tr>>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
                         @foreach ($product as $pro)
                             <tr>
-                                <td>{{ $product->fistItem() + $loop->index }}</td>
+                                <td>{{ $product->firstItem() + $loop->index }}</td>
                                 <td>{{ $pro->name }}</td>
                                 <td>{{ $pro->category->name }}</td>
                                 <td>
-                                    <img src="{{ asset('backend/product/resize/' . $pro->image) }}" alt="">
+                                    <img src="{{ asset('backend/product/'.$pro->image) }}" width="150" alt="">
                                 </td>
                                 <td>{{ $pro->price }}</td>
                                 <td>{{ $pro->description }}</td>
-                                <td>{{ $pro->create_at }}</td>
-                                <td>{{ $pro->update_at }}</td>
+                                <td>{{ $pro->created_at }}</td>
+                                <td>{{ $pro->updated_at }}</td>
                                 <td>
-                                    <a href="{{ route('p.edit', $pro->product_id) }}"><i class="bx bxs-edit"></i></a>
-                                    <a href="{{ url('admin/product/delete/' . $pro->product_id) }}"><i
-                                            class="bx bx-trash"></i></a>
+                                    <a href="{{ route('p.edit', $pro->product_id) }}" class="btn btn-warning">Edit</a>
+                                    <a href="{{ url('admin/product/delete/'.$pro->product_id) }}" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                         @endforeach

@@ -22,7 +22,7 @@
                         </div>
 
                         <label for="defaultFormControlInput" class="form-label">Price</label>
-                        <input type="text" name="name" class="form-control" id="defaultFormControlInput"
+                        <input type="text" name="price" class="form-control" id="defaultFormControlInput"
                             placeholder="กรุณากรอกราคาสินค้า" aria-describedby="defaultFormControlHelp" />
                         <div class="mt-3">
                             @error('price')
@@ -31,7 +31,7 @@
                         </div>
 
                         <label for="defaultFormControlInput" class="form-label">Description</label>
-                        <input type="text" name="name" class="form-control" id="defaultFormControlInput"
+                        <input type="text" name="description" class="form-control" id="defaultFormControlInput"
                             placeholder="กรุณากรอกรายละเอียดสินค้าสินค้า" aria-describedby="defaultFormControlHelp" />
                         <div class="mt-3">
                             @error('description')
@@ -39,14 +39,16 @@
                             @enderror
                         </div>
 
-                        <label for="exabpleFormControlInput" class="form-label">Category</label>
-                        <select name="category_id" class="form-select" id="exampleFormControlSelect1"
-                            aria-label="Default select example">
-                            <option selected>กรุณาเลือกประเภทสินค้า</option>
-                            @foreach ($category as $cat)
-                                <option value="{{ $cat->category_id }}">{{ $cat->name }}</option>
-                            @endforeach
-                        </select>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Category</label>
+                            <select name="category_id" class="form-control" id="exampleFormControlSelect1">
+                                <option selected>กรุณาเลือกประเภทสินค้า</option>
+                                @foreach ($category as $cat)
+                                    <option value="{{ $cat->category_id }}">{{ $cat->name }}</option>
+                                @endforeach
+                            </select>
+                          </div>
+
                         <div class="mt-3">
                             @error('category')
                                 <div class="alert alert-danger">{{ $message }} </div>
@@ -64,9 +66,8 @@
                             </div>
                         </div>
 
-
-                        <input type="submit" value="บันทึก" class="btn btn-primary btn-user btn-block mt-4">
-                        <a href="{{ route('p.product') }}" class="btn btn-danger mt-3 mx-2">ย้อนกลับ</a>
+                            <input type="submit" value="บันทึก" class="btn btn-primary mt-3">
+                            <a href="{{ url('admin/product/index') }}" class="btn btn-danger mt-3">ย้อนกลับ</a>
 
                 </form>
 

@@ -9,11 +9,30 @@ use App\Models\Category;
 class CategoryController extends Controller
 {
     public function index(){
-        return view('backend.category.index');
+
+        $category = Category::orderBy('created_at','desc')->Paginate('10');
+        return view('backend.category.index',compact('category'));
     }
 
     public function create(){
         return view('backend.category.create');
+    }
+
+    public function insert(Request $request){
+        $validated = $request->validate([
+            'name' => 'required|unique:categories|max:255',
+
+        ],[
+            'name.required' => 'กรุณากรอกชื่อประเภทสินค้า',
+            'name.unique' => 'ชื่อนี้มีอยู่ในฐานข้อมูลแล้ว',
+            'name.max' => 'กรอกข้อมูลได้สูงสุด 255 ตัวอักษร',
+        ]);
+
+        $cat = new Category();
+        $cat->name = $request->name;
+        $cat->save();
+        alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.');
+        return redirect('admin/category/index');
     }
 
     public function edit($category_id){
@@ -25,17 +44,16 @@ class CategoryController extends Controller
     {
         $category = Category::find($category_id);
         $category->name = $request->name;
-        $category->category_id = $request->cetegory_id;
+        alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.');
             $category->update();
-            alert()->success('แก้ไขข้อมูลสำเร็จ','ข้อมูลนี้ถูกอัพเดตแล้ว');
-            return redirect()->route('c.category');
+           return redirect('admin/category/index');
 
     }
 
     public function delete($category_id){
         $category = Category::find($category_id);
         $category->delete();
-        alert()->success('ลบข้อมูลสำเร็จ','ข้อมูลนี้ถูกลบแล้ว');
-        return redirect()->route('c.category');
+        alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.');
+       return redirect('admin/category/index');
 }
 }

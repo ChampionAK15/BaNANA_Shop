@@ -26,6 +26,7 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
+        @include('sweetalert::alert')
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">

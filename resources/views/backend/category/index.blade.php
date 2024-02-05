@@ -21,16 +21,19 @@
                 </thead>
                 <tbody>
 
-                   <tr>
-                    <td>1</td>
-                    <td>aaaa</td>
-                    <td>12</td>
-                    <td>13</td>
+                  @foreach ($category as $cat)
+                  <tr>
+                    <td>{{ $category->firstItem() + $loop->index }}</td>
+                    <td>{{ $cat->name }}</td>
+                    <td>{{ $cat->created_at }}</td>
+                    <td>{{ $cat->updated_at }}</td>
                     <td>
-                        <a href="http://" class="btn btn-warning">แก้ไข</a>
-                        <a href="http://" class="btn btn-danger">ลบ</a>
+                        <a href="{{ url('admin/category/edit/'.$cat->category_id) }}" class="btn btn-warning">แก้ไข</a>
+                        <a href="{{ url('admin/category/delete/'.$cat->category_id) }}" class="btn btn-danger">ลบ</a>
                     </td>
                 </tr>
+
+                  @endforeach
 
 
                 </tbody>
