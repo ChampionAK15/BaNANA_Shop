@@ -159,7 +159,9 @@ return [
         /*
          * Package Service Providers...
          */
-
+        //SweetAlert แจ้งเตือน...
+        //Intervention Laravel (รูปภาพ)...
+       
         /*
          * Application Service Providers...
          */
@@ -183,6 +185,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+
     ])->toArray(),
 
 ];
