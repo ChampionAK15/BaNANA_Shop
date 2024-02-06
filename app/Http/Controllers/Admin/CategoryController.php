@@ -31,7 +31,7 @@ class CategoryController extends Controller
         $cat = new Category();
         $cat->name = $request->name;
         $cat->save();
-        alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.');
+        alert()->success('เพิ่มข้อมูลสำเร็จ','ได้ทำการเพิ่มข้อมูลชื่อประเภทสินค้านี้สำเร็จ');
         return redirect('admin/category/index');
     }
 
@@ -44,7 +44,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($category_id);
         $category->name = $request->name;
-        alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.');
+        alert()->success('อัพเดตข้อมูลสำเร็จ','ได้ทำการเพิ่มข้อมูลชื่อประเภทสินค้านี้สำเร็จ');
             $category->update();
            return redirect('admin/category/index');
 
@@ -53,7 +53,7 @@ class CategoryController extends Controller
     public function delete($category_id){
         $category = Category::find($category_id);
         $category->delete();
-        alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.');
+        alert()->success('ทำการลบข้อมูลสำเร็จ','ได้ทำการลบข้อมูลชื่อประเภทสินค้าเรียบร้อย');
        return redirect('admin/category/index');
 }
 }
