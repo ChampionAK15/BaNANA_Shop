@@ -36,7 +36,7 @@
 
     <div class="ibox mt-4">
         <div class="ibox-head">
-            <div class="ibox-title">User Table</div>
+            <div class="ibox-title">Category Table</div>
         </div>
         <div class="ibox-body">
             <div class="table-responsive">

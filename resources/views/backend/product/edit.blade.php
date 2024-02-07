@@ -7,7 +7,7 @@
 
                 <h1 class="h4 text-gray-900 mb-4">Edit Product</h1>
 
-                <form action="{{ url('admin/product/update/'.$pro->product_id) }}" method="post"
+                <form action="{{ url('admin/product/update/' . $pro->product_id) }}" method="post"
                     enctype="multipart/form-data">
                     @csrf
                     <div>
@@ -43,9 +43,15 @@
                             <label class="input-group-text" for="inputGropFile2">Upload</label>
                         </div>
                         <div class="mt-4">
-                            <img src="{{ asset('backend/product/'.$pro->image) }}" width="150" alt="">
+                            <img src="{{ asset('backend/product/' . $pro->image) }}" width="150" alt="">
                         </div>
                         <input type="submit" value="อัพเดต" class="btn btn-primary mt-3">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button class="btn btn-info" type="button">Go!</button>
+                            </div>
+                            <input class="form-control" type="text" placeholder="input group">
+                        </div>
                         <a href="{{ url('admin/product/index') }}" class="btn btn-danger mt-3 mx-2">ย้อนกลับ</a>
                     </div>
                 </form>
