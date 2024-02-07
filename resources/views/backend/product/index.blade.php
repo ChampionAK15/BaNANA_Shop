@@ -3,10 +3,8 @@
     <div class="main-content">
         <div class="section__content section__content--p30">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <a href="{{ url('admin/product/channel') }}" class="btn btn-success">เพิ่มข้อมูล</a>
-                    </div>
+                <div class="col-md-12">
+                    <a href="{{ url('admin/product/channel') }}" class="btn btn-success">เพิ่มข้อมูล</a>
                 </div>
             </div>
             <div class="main-content">

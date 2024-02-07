@@ -10,12 +10,8 @@ class CategoryController extends Controller
 {
     public function index(){
 
-        $category = Category::orderBy('created_at','desc')->Paginate('10');
+        $category = Category::orderBy('created_at','desc')->Paginate(5);
         return view('backend.category.index',compact('category'));
-    }
-
-    public function create(){
-        return view('backend.category.create');
     }
 
     public function insert(Request $request){
