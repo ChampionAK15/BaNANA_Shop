@@ -37,21 +37,16 @@
 
 
                         <label for="defaultFromControlSelect1" class="form-label">Images</label>
-                        <div class="input-group">
+
                             <input name="image" value="{{ $pro->image }}" type="file" class="form-control"
                                 id="inputGropFile2" />
-                            <label class="input-group-text" for="inputGropFile2">Upload</label>
-                        </div>
+
                         <div class="mt-4">
                             <img src="{{ asset('backend/product/' . $pro->image) }}" width="150" alt="">
                         </div>
                         <input type="submit" value="อัพเดต" class="btn btn-primary mt-3">
-                        <div class="input-group">
-                            <div class="input-group-btn">
-                                <button class="btn btn-info" type="button">Go!</button>
-                            </div>
-                            <input class="form-control" type="text" placeholder="input group">
-                        </div>
+
+                            
                         <a href="{{ url('admin/product/index') }}" class="btn btn-danger mt-3 mx-2">ย้อนกลับ</a>
                     </div>
                 </form>
