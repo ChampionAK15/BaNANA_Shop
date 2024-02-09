@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\User;
 use Intervention\Image\Drivers\Gd\Modifiers\RotateModifier;
 
 /*
@@ -23,7 +26,10 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $u = User::all();
+    $c = Category::all();
+    $p = Product::all();
+    return view('dashboard',compact('u','c','p'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
