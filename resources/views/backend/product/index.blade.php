@@ -2,7 +2,7 @@
 @section('con')
     <div class="ibox mt-4">
         <div class="ibox-head">
-            <div class="ibox-title">User Table</div>
+            <div class="ibox-title">Product Table</div>
             <a href="{{ url('admin/product/channel') }}" class="btn btn-success">เพิ่มข้อมูล</a>
         </div>
         <div class="ibox-body">
@@ -49,7 +49,7 @@
                     </tbody>
                 </table>
                 <div class="mt-4">
-
+                    {{ $product->links('pagination::bootstrap-4') }}
                 </div>
             </div>
         </div>

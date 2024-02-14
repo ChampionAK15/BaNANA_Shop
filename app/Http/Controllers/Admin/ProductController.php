@@ -16,7 +16,7 @@ class ProductController extends Controller
     public function index()
     {
 
-        $product = Product::orderBy('created_at', 'desc')->Paginate(10);
+        $product = Product::orderBy('created_at', 'desc')->Paginate(5);
         return view('backend.product.index', compact('product'));
     }
 
@@ -97,7 +97,7 @@ class ProductController extends Controller
             File::delete(public_path() . '/backend/product/' . $product->image);
         }
         $product->delete();
-       
+
         return redirect('admin/product/index');
     }
 }

@@ -4,7 +4,7 @@
 <!-- START PAGE CONTENT-->
 <div class="page-content fade-in-up">
     <div class="row">
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-4 col-md-3">
             <div class="ibox bg-success color-white widget-stat">
                 <div class="ibox-body">
                     <h2 class="m-b-5 font-strong">{{ $p->count() }} ชิ้น</h2>
@@ -13,7 +13,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-4 col-md-3">
             <div class="ibox bg-info color-white widget-stat">
                 <div class="ibox-body">
                     <h2 class="m-b-5 font-strong">{{ $c->count() }} รายการ</h2>
@@ -23,7 +23,7 @@
             </div>
         </div>
 
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-4 col-md-3">
             <div class="ibox bg-danger color-white widget-stat">
                 <div class="ibox-body">
                     <h2 class="m-b-5 font-strong">{{ $u->count() }} คน</h2>
